@@ -16,10 +16,13 @@
 
 package com.matthewtamlin.java_utilities.checkers;
 
+import com.matthewtamlin.java_utilities.testing.Tested;
+
 /**
  * Utility for checking if integers satisfy numeric conditions without boilerplate code.
  */
 @SuppressWarnings({"SameParameterValue", "WeakerAccess"}) // Not relevant to public API
+@Tested(testMethod = "automated")
 public class IntChecker {
 	/**
 	 * The exception message to use if no message is provided.
@@ -27,7 +30,8 @@ public class IntChecker {
 	private static final String DEFAULT_MESSAGE = "integer check failed";
 	
 	/**
-	 * Checks that x &lt; y. If the check passes then x is returned, otherwise an exception is thrown.
+	 * Checks that x &lt; y. If the check passes then x is returned, otherwise an exception is
+	 * thrown.
 	 *
 	 * @param x
 	 * 		the number to check
@@ -44,7 +48,8 @@ public class IntChecker {
 	}
 	
 	/**
-	 * Checks that x &lt; y. If the check passes then x is returned, otherwise an exception is thrown.
+	 * Checks that x &lt; y. If the check passes then x is returned, otherwise an exception is
+	 * thrown.
 	 *
 	 * @param x
 	 * 		the number to check
@@ -109,7 +114,8 @@ public class IntChecker {
 	}
 	
 	/**
-	 * Checks that x &gt; y. If the check passes then x is returned, otherwise an exception is thrown.
+	 * Checks that x &gt; y. If the check passes then x is returned, otherwise an exception is
+	 * thrown.
 	 *
 	 * @param x
 	 * 		the number to check
@@ -126,7 +132,8 @@ public class IntChecker {
 	}
 	
 	/**
-	 * Checks that x &gt; y. If the check passes then x is returned, otherwise an exception is thrown.
+	 * Checks that x &gt; y. If the check passes then x is returned, otherwise an exception is
+	 * thrown.
 	 *
 	 * @param x
 	 * 		the number to check
@@ -149,7 +156,8 @@ public class IntChecker {
 	}
 	
 	/**
-	 * Checks that x &gt;= y. If the check passes then x is returned, otherwise an exception is thrown.
+	 * Checks that x &gt;= y. If the check passes then x is returned, otherwise an exception is
+	 * thrown.
 	 *
 	 * @param x
 	 * 		the number to check
@@ -166,7 +174,8 @@ public class IntChecker {
 	}
 	
 	/**
-	 * Checks that x &gt;= y. If the check passes then x is returned, otherwise an exception is thrown.
+	 * Checks that x &gt;= y. If the check passes then x is returned, otherwise an exception is
+	 * thrown.
 	 *
 	 * @param x
 	 * 		the number to check
