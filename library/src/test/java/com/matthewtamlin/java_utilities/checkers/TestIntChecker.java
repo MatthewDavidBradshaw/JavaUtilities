@@ -34,7 +34,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkLessThan(int, int)} method functions correctly
-	 * when the {@code num} argument is less than the {@code lessThan} argument. The test will only
+	 * when the {@code x} argument is less than the {@code y} argument. The test will only
 	 * pass if the correct integer is returned by the check and no exception is thrown.
 	 */
 	@Test
@@ -45,7 +45,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkLessThan(int, int)} method functions correctly
-	 * when the {@code num} argument is equal to the {@code lessThan} argument. The test will only
+	 * when the {@code x} argument is equal to the {@code y} argument. The test will only
 	 * pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
@@ -55,7 +55,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkLessThan(int, int)} method functions correctly
-	 * when the {@code num} argument is greater than the {@code lessThan} argument. The test will
+	 * when the {@code x} argument is greater than the {@code y} argument. The test will
 	 * only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
@@ -65,7 +65,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkGreaterThan(int, int)} method functions
-	 * correctly when the {@code num} argument is less than the {@code greaterThan} argument. The
+	 * correctly when the {@code x} argument is less than the {@code y} argument. The
 	 * test will only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
@@ -75,7 +75,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkGreaterThan(int, int)} method functions
-	 * correctly when the {@code num} argument is equal to the {@code greaterThan} argument. The
+	 * correctly when the {@code x} argument is equal to the {@code y} argument. The
 	 * test will only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
@@ -85,7 +85,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkGreaterThan(int, int)} method functions
-	 * correctly when the {@code num} argument is greater than the {@code greaterThan} argument. The
+	 * correctly when the {@code x} argument is greater than the {@code y} argument. The
 	 * test will only pass if the correct integer is returned by the check and no exception is
 	 * thrown.
 	 */
@@ -97,7 +97,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkEqualTo(int, int)} method functions correctly
-	 * when the {@code num} argument is less than the {@code equalTo} argument. The test will only
+	 * when the {@code x} argument is less than the {@code y} argument. The test will only
 	 * pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
@@ -107,7 +107,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkEqualTo(int, int, String)} method functions
-	 * correctly when the {@code num} argument is equal to the {@code equalTo} argument. The test
+	 * correctly when the {@code x} argument is equal to the {@code y} argument. The test
 	 * will only pass if the correct integer is returned by the check and no exception is thrown.
 	 */
 	@Test
@@ -118,7 +118,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkEqualTo(int, int)} method functions correctly
-	 * when the {@code num} argument is greater than the {@code equalTo} argument. The test will
+	 * when the {@code x} argument is greater than the {@code y} argument. The test will
 	 * only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
@@ -128,7 +128,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkNotEqualTo(int, int)} method functions
-	 * correctly when the {@code num} argument is less than the {@code notEqualTo} argument. The
+	 * correctly when the {@code x} argument is less than the {@code notEqualTo} argument. The
 	 * test will only pass if the correct integer is returned by the check and no exception is
 	 * thrown.
 	 */
@@ -140,7 +140,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkNotEqualTo(int, int)} method functions
-	 * correctly when the {@code num} argument is equal to the {@code notEqualTo} argument. The test
+	 * correctly when the {@code x} argument is equal to the {@code notEqualTo} argument. The test
 	 * will only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
@@ -150,7 +150,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkNotEqualTo(int, int)} method functions
-	 * correctly when the {@code num} argument is greater than the {@code notEqualTo} argument. The
+	 * correctly when the {@code x} argument is greater than the {@code notEqualTo} argument. The
 	 * test will only pass if the correct integer is returned by the check and no exception is
 	 * thrown.
 	 */
@@ -162,7 +162,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkBetween(int, int, int)} method functions
-	 * correctly when the {@code num} argument is less than the {@code lower} argument. The test
+	 * correctly when the {@code x} argument is less than the {@code lower} argument. The test
 	 * will only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
@@ -172,7 +172,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkBetween(int, int, int)} method functions
-	 * correctly when the {@code num} argument is equal to the {@code lower} argument. The test will
+	 * correctly when the {@code x} argument is equal to the {@code lower} argument. The test will
 	 * only pass if the correct integer is returned by the check and no exception is thrown.
 	 */
 	@Test
@@ -183,7 +183,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkBetween(int, int, int)} method functions
-	 * correctly when the {@code num} argument is between the {@code lower} argument and the {@code
+	 * correctly when the {@code x} argument is between the {@code lower} argument and the {@code
 	 * upper} argument. The test will only pass if the correct integer is returned by the check and
 	 * no exception is thrown.
 	 */
@@ -195,7 +195,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkBetween(int, int, int)} method functions
-	 * correctly when the {@code num} argument is equal to the {@code upper} argument. The test will
+	 * correctly when the {@code x} argument is equal to the {@code upper} argument. The test will
 	 * only pass if the correct integer is returned by the check and no exception is thrown.
 	 */
 	@Test
@@ -206,7 +206,7 @@ public class TestIntChecker {
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkBetween(int, int, int)} method functions
-	 * correctly when the {@code num} argument is greater than the {@code upper} argument. The test
+	 * correctly when the {@code x} argument is greater than the {@code upper} argument. The test
 	 * will only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
