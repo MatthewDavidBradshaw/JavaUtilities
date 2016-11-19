@@ -30,7 +30,7 @@ public class TestIntChecker {
 	/**
 	 * Failure message for use when the wrong integer is returned by the checker.
 	 */
-	private static final String FAILURE_MESSAGE = "Incorrect value returned";
+	private static final String WRONG_RETURN = "Checked passed but returned wrong value	";
 
 	/**
 	 * Test to verify that the {@link IntChecker#checkLessThan(int, int)} method functions correctly
@@ -40,7 +40,7 @@ public class TestIntChecker {
 	@Test
 	public void testCheckLessThan_xLessThanY() {
 		final int result = IntChecker.checkLessThan(5, 6);
-		assertThat(FAILURE_MESSAGE, result == 5);
+		assertThat(WRONG_RETURN, result == 5);
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class TestIntChecker {
 	@Test
 	public void testCheckGreaterThan_xGreaterThanY() {
 		final int result = IntChecker.checkGreaterThan(6, 5);
-		assertThat(FAILURE_MESSAGE, result == 6);
+		assertThat(WRONG_RETURN, result == 6);
 	}
 
 	/**
@@ -113,7 +113,7 @@ public class TestIntChecker {
 	@Test
 	public void testCheckEqualTo_xEqualToY() {
 		final int result = IntChecker.checkEqualTo(5, 5);
-		assertThat(FAILURE_MESSAGE, result == 5);
+		assertThat(WRONG_RETURN, result == 5);
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class TestIntChecker {
 	@Test
 	public void testCheckNotEqualTo_xLessThanY() {
 		final int result = IntChecker.checkNotEqualTo(5, 6);
-		assertThat(FAILURE_MESSAGE, result == 5);
+		assertThat(WRONG_RETURN, result == 5);
 	}
 
 	/**
@@ -157,7 +157,7 @@ public class TestIntChecker {
 	@Test
 	public void testCheckNotEqualTo_xGreaterThanY() {
 		final int result = IntChecker.checkNotEqualTo(6, 5);
-		assertThat(FAILURE_MESSAGE, result == 6);
+		assertThat(WRONG_RETURN, result == 6);
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class TestIntChecker {
 	@Test
 	public void testCheckBetween_xEqualToLower() {
 		final int result = IntChecker.checkBetween(6, 6, 8);
-		assertThat(FAILURE_MESSAGE, result == 6);
+		assertThat(WRONG_RETURN, result == 6);
 	}
 
 	/**
@@ -190,7 +190,7 @@ public class TestIntChecker {
 	@Test
 	public void testCheckBetween_xBetweenLowerAndUpper() {
 		final int result = IntChecker.checkBetween(7, 6, 8);
-		assertThat(FAILURE_MESSAGE, result == 7);
+		assertThat(WRONG_RETURN, result == 7);
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class TestIntChecker {
 	@Test
 	public void testCheckBetween_xEqualToUpper() {
 		final int result = IntChecker.checkBetween(8, 6, 8);
-		assertThat(FAILURE_MESSAGE, result == 8);
+		assertThat(WRONG_RETURN, result == 8);
 	}
 
 	/**
