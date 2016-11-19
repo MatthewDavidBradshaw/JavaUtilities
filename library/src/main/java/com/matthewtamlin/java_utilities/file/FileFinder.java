@@ -16,6 +16,8 @@
 
 package com.matthewtamlin.java_utilities.file;
 
+import com.matthewtamlin.java_utilities.testing.Tested;
+
 import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
@@ -25,6 +27,7 @@ import java.util.Set;
  * down the file tree until there are no more directories to explore.
  */
 @SuppressWarnings("WeakerAccess") // This is a public API class
+@Tested(testMethod = "automated")
 public class FileFinder {
 	/**
 	 * Used during debugging to identify this class.
