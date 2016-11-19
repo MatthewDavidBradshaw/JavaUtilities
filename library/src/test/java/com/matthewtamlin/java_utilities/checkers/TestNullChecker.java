@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package com.matthewtamlin.android_utilities.testing;
-
-import com.matthewtamlin.android_utilities.library.checkers.NullChecker;
+package com.matthewtamlin.java_utilities.checkers;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
