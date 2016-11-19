@@ -38,7 +38,7 @@ public class TestIntChecker {
 	 * pass if the correct integer is returned by the check and no exception is thrown.
 	 */
 	@Test
-	public void testCheckLessThan_lessThanPassed() {
+	public void testCheckLessThan_xLessThanY() {
 		final int result = IntChecker.checkLessThan(5, 6);
 		assertThat(FAILURE_MESSAGE, result == 5);
 	}
@@ -49,7 +49,7 @@ public class TestIntChecker {
 	 * pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckLessThan_equalToPassed() {
+	public void testCheckLessThan_xEqualToY() {
 		IntChecker.checkLessThan(5, 5);
 	}
 
@@ -59,7 +59,7 @@ public class TestIntChecker {
 	 * only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckLessThan_greaterThanPassed() {
+	public void testCheckLessThan_xGreaterThanY() {
 		IntChecker.checkLessThan(6, 5);
 	}
 
@@ -69,7 +69,7 @@ public class TestIntChecker {
 	 * test will only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckGreaterThan_lessThanPassed() {
+	public void testCheckGreaterThan_xLessThanY() {
 		IntChecker.checkGreaterThan(5, 6);
 	}
 
@@ -79,7 +79,7 @@ public class TestIntChecker {
 	 * test will only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckGreaterThan_equalToPassed() {
+	public void testCheckGreaterThan_xEqualToY() {
 		IntChecker.checkGreaterThan(5, 5);
 	}
 
@@ -90,7 +90,7 @@ public class TestIntChecker {
 	 * thrown.
 	 */
 	@Test
-	public void testCheckGreaterThan_greaterThanPassed() {
+	public void testCheckGreaterThan_xGreaterThanY() {
 		final int result = IntChecker.checkGreaterThan(6, 5);
 		assertThat(FAILURE_MESSAGE, result == 6);
 	}
@@ -101,7 +101,7 @@ public class TestIntChecker {
 	 * pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckEqualTo_lessThanPassed() {
+	public void testCheckEqualTo_xLessThanY() {
 		IntChecker.checkEqualTo(5, 6);
 	}
 
@@ -111,7 +111,7 @@ public class TestIntChecker {
 	 * will only pass if the correct integer is returned by the check and no exception is thrown.
 	 */
 	@Test
-	public void testCheckEqualTo_equalToPassed() {
+	public void testCheckEqualTo_xEqualToY() {
 		final int result = IntChecker.checkEqualTo(5, 5);
 		assertThat(FAILURE_MESSAGE, result == 5);
 	}
@@ -122,7 +122,7 @@ public class TestIntChecker {
 	 * only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckEqualTo_greaterThanPassed() {
+	public void testCheckEqualTo_xGreaterThanY() {
 		IntChecker.checkEqualTo(6, 5);
 	}
 
@@ -133,7 +133,7 @@ public class TestIntChecker {
 	 * thrown.
 	 */
 	@Test
-	public void testCheckNotEqualTo_lessThanPassed() {
+	public void testCheckNotEqualTo_xLessThanY() {
 		final int result = IntChecker.checkNotEqualTo(5, 6);
 		assertThat(FAILURE_MESSAGE, result == 5);
 	}
@@ -144,7 +144,7 @@ public class TestIntChecker {
 	 * will only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckNotEqualTo_equalToPassed() {
+	public void testCheckNotEqualTo_xEqualToY() {
 		IntChecker.checkNotEqualTo(5, 5);
 	}
 
@@ -155,7 +155,7 @@ public class TestIntChecker {
 	 * thrown.
 	 */
 	@Test
-	public void testCheckNotEqualTo_greaterThanPassed() {
+	public void testCheckNotEqualTo_xGreaterThanY() {
 		final int result = IntChecker.checkNotEqualTo(6, 5);
 		assertThat(FAILURE_MESSAGE, result == 6);
 	}
@@ -166,7 +166,7 @@ public class TestIntChecker {
 	 * will only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckBetween_lessThanLowerPassed() {
+	public void testCheckBetween_xLessThanLower() {
 		IntChecker.checkBetween(5, 6, 8);
 	}
 
@@ -176,7 +176,7 @@ public class TestIntChecker {
 	 * only pass if the correct integer is returned by the check and no exception is thrown.
 	 */
 	@Test
-	public void testCheckBetween_equalToLowerPassed() {
+	public void testCheckBetween_xEqualToLower() {
 		final int result = IntChecker.checkBetween(6, 6, 8);
 		assertThat(FAILURE_MESSAGE, result == 6);
 	}
@@ -188,7 +188,7 @@ public class TestIntChecker {
 	 * no exception is thrown.
 	 */
 	@Test
-	public void testCheckBetween_betweenPassed() {
+	public void testCheckBetween_xBetweenLowerAndUpper() {
 		final int result = IntChecker.checkBetween(7, 6, 8);
 		assertThat(FAILURE_MESSAGE, result == 7);
 	}
@@ -199,7 +199,7 @@ public class TestIntChecker {
 	 * only pass if the correct integer is returned by the check and no exception is thrown.
 	 */
 	@Test
-	public void testCheckBetween_equalToUpperPassed() {
+	public void testCheckBetween_xEqualToUpper() {
 		final int result = IntChecker.checkBetween(8, 6, 8);
 		assertThat(FAILURE_MESSAGE, result == 8);
 	}
@@ -210,7 +210,7 @@ public class TestIntChecker {
 	 * will only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckBetween_greaterThanUpperPassed() {
+	public void testCheckBetween_xGreaterThanUpper() {
 		IntChecker.checkBetween(9, 6, 8);
 	}
 }
