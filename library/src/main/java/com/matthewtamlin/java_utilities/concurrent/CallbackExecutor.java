@@ -16,6 +16,8 @@
 
 package com.matthewtamlin.java_utilities.concurrent;
 
+import com.matthewtamlin.java_utilities.testing.Tested;
+
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -31,6 +33,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * using a single thread, a cached thread pool, or a fixed thread pool.
  */
 @SuppressWarnings("WeakerAccess") // This is a public API class
+@Tested(testMethod = "automated")
 public class CallbackExecutor {
 	/**
 	 * The ExecutorService which actually runs the tasks.
