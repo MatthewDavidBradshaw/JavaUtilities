@@ -67,6 +67,48 @@ public class IntChecker {
 	}
 	
 	/**
+	 * Checks that x <= y. If the check passes then x is returned, otherwise an exception is
+	 * thrown.
+	 *
+	 * @param x
+	 * 		the number to check
+	 * @param y
+	 * 		the number {@code x} must be less than or equal to
+	 *
+	 * @return {@code x}
+	 *
+	 * @throws IllegalArgumentException
+	 * 		if {@code x} > {@code y}
+	 */
+	public static int checkLessThanOrEqualTo(final int x, final int y) {
+		return checkLessThanOrEqualTo(x, y, DEFAULT_MESSAGE);
+	}
+	
+	/**
+	 * Checks that x <= y. If the check passes then x is returned, otherwise an exception is
+	 * thrown.
+	 *
+	 * @param x
+	 * 		the number to check
+	 * @param y
+	 * 		the number {@code x} must be less than or equal to
+	 * @param message
+	 * 		the exception message, may be null
+	 *
+	 * @return {@code x}
+	 *
+	 * @throws IllegalArgumentException
+	 * 		if {@code x} > {@code y}
+	 */
+	public static int checkLessThanOrEqualTo(final int x, final int y, final String message) {
+		if (x > y) {
+			throw new IllegalArgumentException(message);
+		} else {
+			return x;
+		}
+	}
+	
+	/**
 	 * Checks that x > y. If the check passes then x is returned, otherwise an exception is thrown.
 	 *
 	 * @param x
