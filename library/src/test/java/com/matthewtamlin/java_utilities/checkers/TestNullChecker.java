@@ -38,7 +38,7 @@ public class TestNullChecker {
 	 * IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckNull_1_nullPassed() {
+	public void testCheckNonNull_1_nullPassed() {
 		NullChecker.checkNonNull(null);
 	}
 
@@ -49,7 +49,7 @@ public class TestNullChecker {
 	 */
 	@SuppressWarnings("StringEquality") // Reference equality is needed for test to pass
 	@Test
-	public void testCheckNull_1_nonNullPassed() {
+	public void testCheckNonNull_1_nonNullPassed() {
 		final String result = NullChecker.checkNonNull(TEST_STRING);
 		assertThat("incorrect object returned", result == TEST_STRING);
 	}
@@ -60,7 +60,7 @@ public class TestNullChecker {
 	 * IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
-	public void testCheckNull_2_nullPassed() {
+	public void testCheckNonNull_2_nullPassed() {
 		NullChecker.checkNonNull(null, "error message");
 	}
 
@@ -71,7 +71,7 @@ public class TestNullChecker {
 	 */
 	@SuppressWarnings("StringEquality") // Reference equality is needed for test to pass
 	@Test
-	public void testCheckNull_2_nonNullPassed() {
+	public void testCheckNonNull_2_nonNullPassed() {
 		final String result = NullChecker.checkNonNull(TEST_STRING, "error message");
 		assertThat("incorrect object returned", result == TEST_STRING);
 	}
