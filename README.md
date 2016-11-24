@@ -6,7 +6,8 @@ There are four utility classes in this library:
 - `CallbackExecutor`: Executes a queue of Runnable tasks and delivers a callback when all tasks complete.
 - `FileFinder`: Recursively searches a file tree to find all files below a particular directory.
 - `IntChecker`: Checks that integers meet certain numeric conditions without boilerplate code.
-- `NullChecker`: Checks that argument are non-null without boilerplate code.
+- `NullChecker`: Checks that arguments are non-null without boilerplate code. Also provides a
+utility for checking the contents of a collection in one line.
 
 The library also contains the @Tested annotation which is useful for keeping track of which classes have been tested.
 
