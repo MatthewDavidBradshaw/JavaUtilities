@@ -18,6 +18,10 @@ package com.matthewtamlin.java_utilities.checkers;
 
 import com.matthewtamlin.java_utilities.testing.Tested;
 
+import java.util.Collection;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+
 /**
  * Utility for checking if arguments are null without boilerplate code.
  */
@@ -31,6 +35,9 @@ public class NullChecker {
 	 * 		the object to check
 	 *
 	 * @return {@code object}
+	 *
+	 * @throws IllegalArgumentException
+	 * 		if {@code object} is null
 	 */
 	public static <T> T checkNonNull(T object) {
 		return checkNonNull(object, null);
@@ -46,12 +53,76 @@ public class NullChecker {
 	 * 		the exception message, may be null
 	 *
 	 * @return {@code object}
+	 *
+	 * @throws IllegalArgumentException
+	 * 		if {@code object} is null
 	 */
 	public static <T> T checkNonNull(final T object, final String message) {
 		if (object != null) {
 			return object;
 		} else {
-			throw new IllegalArgumentException(message == null ? "" : message);
+			throw new IllegalArgumentException(message == null ? "null check failed" : message);
 		}
+	}
+	
+	/**
+	 * Checks that each element in the supplied Collection is not null. If the check passes then
+	 * the collection is returned, otherwise an IllegalArgumentException is thrown. The
+	 * collection must not be concurrently modified while this method executes or else a
+	 * ConcurrentModificationException will occur.
+	 *
+	 * @param collection
+	 * 		the object to check, not null
+	 *
+	 * @return {@code object}
+	 *
+	 * @throws IllegalArgumentException
+	 * 		if {@code collection} is null
+	 * @throws IllegalArgumentException
+	 * 		if {@code collection} contains at least one null element
+	 * @throws ConcurrentModificationException
+	 * 		if {@code collection} is concurrently modified while this method executes
+	 */
+	public static <T> Collection<T> checkEachElementIsNonNull(final Collection<T> collection) {
+		return checkEachElementIsNonNull(collection, null);
+	}
+	
+	/**
+	 * Checks that each element in the supplied Collection is not null. If the check passes then
+	 * the collection is returned, otherwise an IllegalArgumentException is thrown. The
+	 * collection must not be concurrently modified while this method executes or else a
+	 * ConcurrentModificationException will occur.
+	 *
+	 * @param collection
+	 * 		the object to check, not null
+	 * @param message
+	 * 		the exception message, may be null
+	 *
+	 * @return {@code object}
+	 *
+	 * @throws IllegalArgumentException
+	 * 		if {@code collection} is null
+	 * @throws IllegalArgumentException
+	 * 		if {@code collection} contains at least one null element
+	 * @throws ConcurrentModificationException
+	 * 		if {@code collection} is concurrently modified while this method executes
+	 */
+	@SuppressWarnings("WhileLoopReplaceableByForEach") // Use while loop for concurrency protection
+	public static <T> Collection<T> checkEachElementIsNonNull(final Collection<T> collection,
+			final String message) {
+		checkNonNull(collection, "collection cannot be null");
+		
+		// Use an iterator so that an exception occurs if the collection is modified concurrently
+		final Iterator<T> iterator = collection.iterator();
+		
+		while (iterator.hasNext()) {
+			if (iterator.next() == null) {
+				throw new IllegalArgumentException(message == null ? "null check failed" :
+						message);
+			}
+		}
+		
+		// No elements triggered exception, therefore the collection must be entirely non-null
+		return collection;
 	}
 }
