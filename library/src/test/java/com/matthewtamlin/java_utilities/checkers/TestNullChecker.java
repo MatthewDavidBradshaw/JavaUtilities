@@ -36,8 +36,14 @@ public class TestNullChecker {
 	 */
 	private static final String TEST_STRING = "test";
 	
+	/**
+	 * A collection guaranteed to contain at least one null element.
+	 */
 	private Collection<String> containingNull = new ArrayList<>();
 	
+	/**
+	 * A collection guaranteed to contain exactly zero	 null elements.
+	 */
 	private Collection<String> notContainingNull = new ArrayList<>();
 	
 	@Before
