@@ -35,6 +35,9 @@ public class NullChecker {
 	 * 		the object to check
 	 *
 	 * @return {@code object}
+	 *
+	 * @throws IllegalArgumentException
+	 * 		if {@code object} is null
 	 */
 	public static <T> T checkNonNull(T object) {
 		return checkNonNull(object, null);
@@ -50,6 +53,9 @@ public class NullChecker {
 	 * 		the exception message, may be null
 	 *
 	 * @return {@code object}
+	 *
+	 * @throws IllegalArgumentException
+	 * 		if {@code object} is null
 	 */
 	public static <T> T checkNonNull(final T object, final String message) {
 		if (object != null) {
