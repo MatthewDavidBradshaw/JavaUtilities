@@ -27,6 +27,8 @@ import java.util.Iterator;
  */
 @Tested(testMethod = "automated")
 public class NullChecker {
+	private static final String DEFAULT_MESSAGE = "null check failed";
+
 	/**
 	 * Checks that the supplied object is not null. If the check passes then the object is
 	 * returned, otherwise an IllegalArgumentException is thrown.
@@ -58,7 +60,7 @@ public class NullChecker {
 	 * 		if {@code object} is null
 	 */
 	public static <T> T checkNonNull(final T object, final String message) {
-		final String exceptionMessage = message == null ? "null check " + "failed" : message;
+		final String exceptionMessage = message == null ? DEFAULT_MESSAGE : message;
 		
 		return checkNonNull(object, new IllegalArgumentException(exceptionMessage));
 	}
@@ -101,7 +103,7 @@ public class NullChecker {
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
 	public static <T> Collection<T> checkEachElementIsNonNull(final Collection<T> collection) {
-		return checkEachElementIsNonNull(collection, null);
+		return checkEachElementIsNonNull(collection, (String) null);
 	}
 	
 	/**
@@ -124,23 +126,12 @@ public class NullChecker {
 	 * @throws ConcurrentModificationException
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
-	@SuppressWarnings("WhileLoopReplaceableByForEach")
 	public static <T> Collection<T> checkEachElementIsNonNull(final Collection<T> collection,
 			final String message) {
-		checkNonNull(collection, "collection cannot be null");
+		final String exceptionMessage = message == null ? DEFAULT_MESSAGE : message;
 		
-		// Use an iterator so that an exception occurs if the collection is modified concurrently
-		final Iterator<T> iterator = collection.iterator();
-		
-		while (iterator.hasNext()) {
-			if (iterator.next() == null) {
-				throw new IllegalArgumentException(message == null ? "null check failed" :
-						message);
-			}
-		}
-		
-		// No elements triggered exception, therefore the collection must be entirely non-null
-		return collection;
+		return checkEachElementIsNotNull(collection, new IllegalArgumentException
+				(exceptionMessage));
 	}
 	
 	/**
