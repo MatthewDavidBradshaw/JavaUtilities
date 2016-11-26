@@ -114,16 +114,6 @@ public class TestNullChecker {
 	
 	/**
 	 * Test to verify that the {@link NullChecker#checkNotNull(Object, RuntimeException)} method
-	 * fails when null is passed for the {@code exception} argument. The test will only pass if
-	 * an IllegalArgumentException is thrown.
-	 */
-	@Test(expected = IllegalArgumentException.class)
-	public void testCheckNotNull_3_nullExceptionPassed() {
-		checkNotNull(TEST_STRING, (RuntimeException) null);
-	}
-	
-	/**
-	 * Test to verify that the {@link NullChecker#checkNotNull(Object, RuntimeException)} method
 	 * functions correctly when a non-null String is passed for the {@code object} argument. The
 	 * test will only pass if the same String instance is returned and no exception is thrown.
 	 */
@@ -132,6 +122,16 @@ public class TestNullChecker {
 	public void testCheckNotNull_3_nonNullObjectPassed() {
 		final String result = checkNotNull(TEST_STRING, new IllegalStateException());
 		assertThat("incorrect object returned", result == TEST_STRING);
+	}
+	
+	/**
+	 * Test to verify that the {@link NullChecker#checkNotNull(Object, RuntimeException)} method
+	 * fails when null is passed for the {@code exception} argument. The test will only pass if
+	 * an IllegalArgumentException is thrown.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void testCheckNotNull_3_nullExceptionPassed() {
+		checkNotNull(TEST_STRING, (RuntimeException) null);
 	}
 	
 	
