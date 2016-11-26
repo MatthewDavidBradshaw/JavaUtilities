@@ -126,14 +126,13 @@ public class TestNullChecker {
 	
 	/**
 	 * Test to verify that the {@link NullChecker#checkNotNull(Object, RuntimeException)} method
-	 * fails when null is passed for the {@code exception} argument. The test will only pass if
-	 * an IllegalArgumentException is thrown.
+	 * fails correctly when null is passed for the {@code exception} argument. The test will only
+	 * pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void testCheckNotNull_3_nullExceptionPassed() {
 		checkNotNull(TEST_STRING, (RuntimeException) null);
 	}
-	
 	
 	/**
 	 * Test to verify that the {@link NullChecker#checkEachElementIsNotNull(Collection)} method
@@ -158,7 +157,7 @@ public class TestNullChecker {
 	
 	/**
 	 * Test to verify that the {@link NullChecker#checkEachElementIsNotNull(Collection)} method
-	 * functions correctly when null is supplied. The test will only pass if an
+	 * fails correctly when null is supplied. The test will only pass if an
 	 * IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
@@ -168,9 +167,9 @@ public class TestNullChecker {
 	
 	/**
 	 * Test to verify that the {@link NullChecker#checkEachElementIsNotNull(Collection, String)}
-	 * method functions correctly when a collection containing at least one null element is
-	 * supplied for the {@code collection} argument. The test will only pass if an
-	 * IllegalArgumentException is thrown.
+	 * method functions correctly when a collection containing at least one null element is supplied
+	 * for the {@code collection} argument. The test will only pass if an IllegalArgumentException
+	 * is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void testCheckEachElementIsNotNull_2_collectionContainingNull() {
@@ -191,12 +190,24 @@ public class TestNullChecker {
 	
 	/**
 	 * Test to verify that the {@link NullChecker#checkEachElementIsNotNull(Collection)} method
-	 * functions correctly when null is supplied for the {@code collection} argument. The test will
+	 * fails correctly when null is supplied for the {@code collection} argument. The test will
 	 * only pass if an IllegalArgumentException is thrown.
 	 */
 	@Test(expected = IllegalArgumentException.class)
 	public void testCheckEachElementIsNotNull_2_nullSupplied() {
 		checkEachElementIsNotNull(null, (String) null);
+	}
+	
+	/**
+	 * Test to verify that the
+	 * {@link NullChecker#checkEachElementIsNotNull(Collection, RuntimeException)} method
+	 * functions correctly when a collection containing at least one null element is supplied for
+	 * the {@code collection} argument. The test will only pass if an IllegalStateException is
+	 * thrown.
+	 */
+	@Test(expected = IllegalStateException.class)
+	public void testCheckEachElementIsNotNull_3_collectionContainingNull() {
+		checkEachElementIsNotNull(containingNull, new IllegalStateException());
 	}
 	
 	/**
@@ -216,9 +227,9 @@ public class TestNullChecker {
 	 * Test to verify that the
 	 * {@link NullChecker#checkEachElementIsNotNull(Collection, RuntimeException)} method
 	 * fails correctly when null is supplied for the {@code collection} argument. The test will
-	 * only pass if an IllegalStateException is thrown.
+	 * only pass if an IllegalArgumentException is thrown.
 	 */
-	@Test(expected = IllegalStateException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testCheckEachElementIsNotNull_3_nullCollectionSupplied() {
 		checkEachElementIsNotNull(null, new IllegalStateException());
 	}
