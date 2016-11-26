@@ -41,8 +41,8 @@ public class NullChecker {
 	 * @throws IllegalArgumentException
 	 * 		if {@code object} is null
 	 */
-	public static <T> T checkNonNull(final T object) {
-		return checkNonNull(object, (String) null);
+	public static <T> T checkNotNull(final T object) {
+		return checkNotNull(object, (String) null);
 	}
 	
 	/**
@@ -59,10 +59,10 @@ public class NullChecker {
 	 * @throws IllegalArgumentException
 	 * 		if {@code object} is null
 	 */
-	public static <T> T checkNonNull(final T object, final String message) {
+	public static <T> T checkNotNull(final T object, final String message) {
 		final String exceptionMessage = message == null ? DEFAULT_MESSAGE : message;
 		
-		return checkNonNull(object, new IllegalArgumentException(exceptionMessage));
+		return checkNotNull(object, new IllegalArgumentException(exceptionMessage));
 	}
 	
 	/**
@@ -76,7 +76,7 @@ public class NullChecker {
 	 *
 	 * @return {@code object}
 	 */
-	public static <T> T checkNonNull(final T object, final RuntimeException exception) {
+	public static <T> T checkNotNull(final T object, final RuntimeException exception) {
 		if (object != null) {
 			return object;
 		} else {
@@ -102,8 +102,8 @@ public class NullChecker {
 	 * @throws ConcurrentModificationException
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
-	public static <T> Collection<T> checkEachElementIsNonNull(final Collection<T> collection) {
-		return checkEachElementIsNonNull(collection, (String) null);
+	public static <T> Collection<T> checkEachElementIsNotNull(final Collection<T> collection) {
+		return checkEachElementIsNotNull(collection, (String) null);
 	}
 	
 	/**
@@ -126,7 +126,7 @@ public class NullChecker {
 	 * @throws ConcurrentModificationException
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
-	public static <T> Collection<T> checkEachElementIsNonNull(final Collection<T> collection,
+	public static <T> Collection<T> checkEachElementIsNotNull(final Collection<T> collection,
 			final String message) {
 		final String exceptionMessage = message == null ? DEFAULT_MESSAGE : message;
 		
@@ -155,7 +155,7 @@ public class NullChecker {
 	@SuppressWarnings("WhileLoopReplaceableByForEach")
 	public static <T> Collection<T> checkEachElementIsNotNull(final Collection<T> collection,
 			final RuntimeException exception) {
-		checkNonNull(collection, "collection cannot be null");
+		checkNotNull(collection, "collection cannot be null");
 		
 		// Use an iterator so that an exception occurs if the collection is modified concurrently
 		final Iterator<T> iterator = collection.iterator();
