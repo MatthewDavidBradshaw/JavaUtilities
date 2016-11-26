@@ -28,7 +28,7 @@ import java.util.Iterator;
 @Tested(testMethod = "automated")
 public class NullChecker {
 	private static final String DEFAULT_MESSAGE = "null check failed";
-
+	
 	/**
 	 * Checks that the supplied object is not null. If the check passes then the object is
 	 * returned, otherwise an IllegalArgumentException is thrown.
@@ -75,9 +75,15 @@ public class NullChecker {
 	 * 		the exception to throw if {@code object} is null, not null
 	 *
 	 * @return {@code object}
+	 *
+	 * @throws IllegalArgumentException
+	 * 		if {@code exception} is null
+	 * @throws S
+	 * 		if {@code object} is null
 	 */
 	@SuppressWarnings("ThrowableResultOfMethodCallIgnored") // Irrelevant in the context
-	public static <T> T checkNotNull(final T object, final RuntimeException exception) {
+	public static <T, S extends Exception> T checkNotNull(final T object, final S exception)
+			throws S {
 		if (exception == null) {
 			throw new IllegalArgumentException("exception cannot be null");
 		}
@@ -135,8 +141,8 @@ public class NullChecker {
 			final String message) {
 		final String exceptionMessage = message == null ? DEFAULT_MESSAGE : message;
 		
-		return checkEachElementIsNotNull(collection, new IllegalArgumentException
-				(exceptionMessage));
+		return checkEachElementIsNotNull(collection,
+				new IllegalArgumentException(exceptionMessage));
 	}
 	
 	/**
@@ -154,12 +160,14 @@ public class NullChecker {
 	 *
 	 * @throws IllegalArgumentException
 	 * 		if {@code collection} is null
+	 * @throws S
+	 * 		if {@code collection} contains at least one null element
 	 * @throws ConcurrentModificationException
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
 	@SuppressWarnings("WhileLoopReplaceableByForEach")
-	public static <T> Collection<T> checkEachElementIsNotNull(final Collection<T> collection,
-			final RuntimeException exception) {
+	public static <T, S extends Exception> Collection<T> checkEachElementIsNotNull(
+			final Collection<T> collection, final S exception) throws S {
 		checkNotNull(collection, "collection cannot be null");
 		
 		// Use an iterator so that an exception occurs if the collection is modified concurrently
