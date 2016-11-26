@@ -76,7 +76,12 @@ public class NullChecker {
 	 *
 	 * @return {@code object}
 	 */
+	@SuppressWarnings("ThrowableResultOfMethodCallIgnored") // Irrelevant in the context
 	public static <T> T checkNotNull(final T object, final RuntimeException exception) {
+		if (exception == null) {
+			throw new IllegalArgumentException("exception cannot be null");
+		}
+		
 		if (object != null) {
 			return object;
 		} else {
