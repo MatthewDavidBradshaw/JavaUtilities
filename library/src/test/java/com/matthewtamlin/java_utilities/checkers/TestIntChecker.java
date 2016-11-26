@@ -30,7 +30,7 @@ public class TestIntChecker {
 	/**
 	 * Failure message for use when the wrong integer is returned by the checker.
 	 */
-	private static final String WRONG_RETURN = "Checked passed but returned wrong value	";
+	private static final String WRONG_RETURN = "Checked passed but returned wrong value";
 	
 	/**
 	 * Test to verify that the {@link IntChecker#checkLessThan(int, int)} method functions
