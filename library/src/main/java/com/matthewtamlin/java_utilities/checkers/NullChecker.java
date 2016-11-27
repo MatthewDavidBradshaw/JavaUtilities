@@ -113,7 +113,7 @@ public class NullChecker {
 	 * @throws ConcurrentModificationException
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
-	public static <T> Collection<T> checkEachElementIsNotNull(final Collection<T> collection) {
+	public static <C extends Collection> C checkEachElementIsNotNull(final C collection) {
 		return checkEachElementIsNotNull(collection, (String) null);
 	}
 	
@@ -137,7 +137,7 @@ public class NullChecker {
 	 * @throws ConcurrentModificationException
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
-	public static <T> Collection<T> checkEachElementIsNotNull(final Collection<T> collection,
+	public static <C extends Collection> C checkEachElementIsNotNull(final C collection,
 			final String message) {
 		final String exceptionMessage = message == null ? DEFAULT_MESSAGE : message;
 		
@@ -166,12 +166,12 @@ public class NullChecker {
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
 	@SuppressWarnings("WhileLoopReplaceableByForEach")
-	public static <T, S extends Exception> Collection<T> checkEachElementIsNotNull(
-			final Collection<T> collection, final S exception) throws S {
+	public static <C extends Collection, S extends Exception> C	checkEachElementIsNotNull(
+			final C collection, final S exception) throws S {
 		checkNotNull(collection, "collection cannot be null");
 		
 		// Use an iterator so that an exception occurs if the collection is modified concurrently
-		final Iterator<T> iterator = collection.iterator();
+		final Iterator iterator = collection.iterator();
 		
 		while (iterator.hasNext()) {
 			if (iterator.next() == null) {
