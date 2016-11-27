@@ -35,6 +35,8 @@ public class NullChecker {
 	 *
 	 * @param object
 	 * 		the object to check
+	 * @param <T>
+	 * 		the type of object being checked
 	 *
 	 * @return {@code object}
 	 *
@@ -53,6 +55,8 @@ public class NullChecker {
 	 * 		the object to check
 	 * @param message
 	 * 		the message to add to the exception, null allowed
+	 * @param <T>
+	 * 		the type of object being checked
 	 *
 	 * @return {@code object}
 	 *
@@ -73,17 +77,21 @@ public class NullChecker {
 	 * 		the object to check
 	 * @param exception
 	 * 		the exception to throw if {@code object} is null, not null
+	 * @param <T>
+	 * 		the type of object being checked
+	 * @param <E>
+	 * 		the type of exception to throw if the check fails
 	 *
 	 * @return {@code object}
 	 *
 	 * @throws IllegalArgumentException
 	 * 		if {@code exception} is null
-	 * @throws S
+	 * @throws E
 	 * 		if {@code object} is null
 	 */
 	@SuppressWarnings("ThrowableResultOfMethodCallIgnored") // Irrelevant in the context
-	public static <T, S extends Exception> T checkNotNull(final T object, final S exception)
-			throws S {
+	public static <T, E extends Exception> T checkNotNull(final T object, final E exception)
+			throws E {
 		if (exception == null) {
 			throw new IllegalArgumentException("exception cannot be null");
 		}
@@ -103,6 +111,8 @@ public class NullChecker {
 	 *
 	 * @param collection
 	 * 		the collection to check, not null
+	 * @param <C>
+	 * 		the type of collection being checked
 	 *
 	 * @return {@code object}
 	 *
@@ -113,7 +123,7 @@ public class NullChecker {
 	 * @throws ConcurrentModificationException
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
-	public static <T> Collection<T> checkEachElementIsNotNull(final Collection<T> collection) {
+	public static <C extends Collection> C checkEachElementIsNotNull(final C collection) {
 		return checkEachElementIsNotNull(collection, (String) null);
 	}
 	
@@ -127,6 +137,8 @@ public class NullChecker {
 	 * 		the collection to check, not null
 	 * @param message
 	 * 		the exception message, may be null
+	 * @param <C>
+	 * 		the type of collection being checked
 	 *
 	 * @return {@code object}
 	 *
@@ -137,7 +149,7 @@ public class NullChecker {
 	 * @throws ConcurrentModificationException
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
-	public static <T> Collection<T> checkEachElementIsNotNull(final Collection<T> collection,
+	public static <C extends Collection> C checkEachElementIsNotNull(final C collection,
 			final String message) {
 		final String exceptionMessage = message == null ? DEFAULT_MESSAGE : message;
 		
@@ -155,23 +167,27 @@ public class NullChecker {
 	 * 		the collection to check, not null
 	 * @param exception
 	 * 		the exception to throw, not null
+	 * @param <C>
+	 * 		the type of collection being checked
+	 * @param <E>
+	 * 		the type of exception to throw if the check fails
 	 *
 	 * @return {@code object}
 	 *
 	 * @throws IllegalArgumentException
 	 * 		if {@code collection} is null
-	 * @throws S
+	 * @throws E
 	 * 		if {@code collection} contains at least one null element
 	 * @throws ConcurrentModificationException
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
 	@SuppressWarnings("WhileLoopReplaceableByForEach")
-	public static <T, S extends Exception> Collection<T> checkEachElementIsNotNull(
-			final Collection<T> collection, final S exception) throws S {
+	public static <C extends Collection, E extends Exception> C checkEachElementIsNotNull(
+			final C collection, final E exception) throws E {
 		checkNotNull(collection, "collection cannot be null");
 		
 		// Use an iterator so that an exception occurs if the collection is modified concurrently
-		final Iterator<T> iterator = collection.iterator();
+		final Iterator iterator = collection.iterator();
 		
 		while (iterator.hasNext()) {
 			if (iterator.next() == null) {
