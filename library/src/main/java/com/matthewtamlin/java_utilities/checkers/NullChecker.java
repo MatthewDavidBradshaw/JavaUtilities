@@ -35,6 +35,8 @@ public class NullChecker {
 	 *
 	 * @param object
 	 * 		the object to check
+	 * @param <T>
+	 * 		the type of object being checked
 	 *
 	 * @return {@code object}
 	 *
@@ -53,6 +55,8 @@ public class NullChecker {
 	 * 		the object to check
 	 * @param message
 	 * 		the message to add to the exception, null allowed
+	 * @param <T>
+	 * 		the type of object being checked
 	 *
 	 * @return {@code object}
 	 *
@@ -73,6 +77,10 @@ public class NullChecker {
 	 * 		the object to check
 	 * @param exception
 	 * 		the exception to throw if {@code object} is null, not null
+	 * @param <T>
+	 * 		the type of object being checked
+	 * @param <S>
+	 * 		the type of exception to throw if the check fails
 	 *
 	 * @return {@code object}
 	 *
@@ -103,6 +111,8 @@ public class NullChecker {
 	 *
 	 * @param collection
 	 * 		the collection to check, not null
+	 * @param <C>
+	 * 		the type of collection being checked
 	 *
 	 * @return {@code object}
 	 *
@@ -127,6 +137,8 @@ public class NullChecker {
 	 * 		the collection to check, not null
 	 * @param message
 	 * 		the exception message, may be null
+	 * @param <C>
+	 * 		the type of collection being checked
 	 *
 	 * @return {@code object}
 	 *
@@ -155,6 +167,10 @@ public class NullChecker {
 	 * 		the collection to check, not null
 	 * @param exception
 	 * 		the exception to throw, not null
+	 * @param <C>
+	 * 		the type of collection being checked
+	 * @param <S>
+	 * 		the type of exception to throw if the check fails
 	 *
 	 * @return {@code object}
 	 *
@@ -166,7 +182,7 @@ public class NullChecker {
 	 * 		if {@code collection} is concurrently modified while this method executes
 	 */
 	@SuppressWarnings("WhileLoopReplaceableByForEach")
-	public static <C extends Collection, S extends Exception> C	checkEachElementIsNotNull(
+	public static <C extends Collection, S extends Exception> C checkEachElementIsNotNull(
 			final C collection, final S exception) throws S {
 		checkNotNull(collection, "collection cannot be null");
 		
