@@ -3,7 +3,7 @@ apply plugin: 'java'
 ext {
     PUBLISH_GROUP_ID = 'com.matthew-tamlin'
     PUBLISH_ARTIFACT_ID = 'java-utilities'
-    PUBLISH_VERSION = '1.3.2'
+    PUBLISH_VERSION = '1.3.3'
 }
 
 repositories {
