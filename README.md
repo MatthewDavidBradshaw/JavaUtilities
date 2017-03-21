@@ -36,9 +36,7 @@ executor.execute();
 ```
 
 ### FileFinder
-Recursively searches a file tree to find all files below a particular directory.
-
-Consider the following file tree:
+Recursively searches a file tree to find all files below a particular directory. Consider the following file tree:
 ```
 - A
   - B
