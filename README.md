@@ -13,7 +13,27 @@ There are five components in this library:
 - Tested
 
 ### CallbackExecutor
-Executes a queue of Runnable tasks and delivers a callback when all tasks complete.
+Executes a queue of Runnable tasks and delivers a callback when all tasks complete. This is especially useful when Java 1.8 isn't available.
+
+Create an executor using one of the three available configurations.
+```java
+// Three configurations are provided
+CallbackExecutor executor1 = CallbackExecutor.usingSingleThreadExecutor();
+CallbackExecutor executor2 = CallbackExecutor.usingFixedThreadPool(3);
+CallbackExecutor executor3 = CallbackExecutor.usingCachedThreadPool();
+```
+
+Add listeners and start execution.
+```java
+executor.registerOnExecutionCompleteListener(new OnExecutionCompleteListener() {
+	@Override
+	public void onExecutionComplete(CallbackExecutor callbackExecutor) {
+		// Execution complete
+	}
+}
+
+executor.execute();
+```
 
 ### FileFinder
 Recursively searches a file tree to find all files below a particular directory.
