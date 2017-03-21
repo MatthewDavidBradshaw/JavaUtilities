@@ -19,7 +19,7 @@ Create an executor using one of the three available configurations.
 ```java
 // Three configurations are provided
 CallbackExecutor executor1 = CallbackExecutor.usingSingleThreadExecutor();
-CallbackExecutor executor2 = CallbackExecutor.usingFixedThreadPool(3);
+CallbackExecutor executor2 = CallbackExecutor.usingFixedThreadPool(numberOfThreads);
 CallbackExecutor executor3 = CallbackExecutor.usingCachedThreadPool();
 ```
 
