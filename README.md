@@ -51,7 +51,7 @@ Recursively searches a file tree to find all files below a particular directory.
 - K
 ```
 
-Searching the tree using `searchDownTreeFrom(new File("A"));` returns a set containing `[A, B, C, D, E, F, G and H]` but not `[I, J, K]`.
+Searching the tree using `searchDownTreeFrom(new File("A"));` and returns a set containing `[A, B, C, D, E, F, G and H]` but not `[I, J, K]`.
 
 ### IntChecker
 Checks that integers meet numeric conditions without boilerplate code.
