@@ -1,4 +1,4 @@
-#JavaUtilities
+# JavaUtilities
 A small library of Java utilities which I've found to be useful in Java development. Releases are made available through jCentre. Add `compile 'com.matthew-tamlin:java-utilities:1.3.3'` to your gradle build file to use the latest version. Older versions are available in the [maven repo](https://bintray.com/matthewtamlin/maven/JavaUtilities/view).
 
 ## Utilities
