@@ -75,7 +75,20 @@ Checkers exist for:
 - Not equal to
 
 ### NullChecker
-Checks that arguments are non-null without boilerplate code. Also provides a utility for checking the contents of a collection in one line.
+Performs null checks without boilerplate code.
+```java
+// Passes and returns the Object
+checkNotNull(new Object());
+
+// Fails and throws an IllegalArgumentException with a default message
+checkNotNull(null);
+
+// Fails and throws an IllegalArgumentException with the message "check failed"
+checkNotNull(null, "check failed");
+
+// Fails and throws the supplied exception
+checkNotNull(null, new MyCustomException());
+```
 
 ### @Tested
 Useful for marking classes which have been tested.
