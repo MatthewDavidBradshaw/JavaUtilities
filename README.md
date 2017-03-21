@@ -4,13 +4,13 @@ This library contains simple helpers and utilities which save time and eliminate
 ## Download
 Releases are made available through jCentre. Add `compile 'com.matthew-tamlin:java-utilities:1.3.3'` to your gradle build file to use the latest version. Older versions are available in the [maven repo](https://bintray.com/matthewtamlin/maven/JavaUtilities/view).
 
-## Utilities
-There are four utility classes in this library:
+## Components
+There are five components in this library:
 - CallbackExecutor
 - FileFinder
 - IntChecker
 - NullChecker
-- @Tested
+- Tested
 
 ### CallbackExecutor
 Executes a queue of Runnable tasks and delivers a callback when all tasks complete.
