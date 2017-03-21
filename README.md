@@ -41,7 +41,7 @@ Recursively searches a file tree to find all files below a particular directory.
 - A
   - B
     - C
-	  - D
+      - D
   - E
     - F
   - G
