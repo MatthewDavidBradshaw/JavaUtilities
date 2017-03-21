@@ -37,10 +37,23 @@ executor.execute();
 
 ### FileFinder
 Recursively searches a file tree to find all files below a particular directory.
-```java
-Set<File> allFiles = searchDownTreeFrom(new File("C:\"));
-Set<File> allUserFiles = searchDownTreeFrom(new File("c:\Users\Matt");
+
+Consider the following file tree:
 ```
+- A
+  - B
+    - C
+	  - D
+  - E
+    - F
+  - G
+  - H
+- I
+  - J
+- K
+```
+
+Searching the tree using `Set<File> allFiles = searchDownTreeFrom(new File("A"));` returns a set containing `[A, B, C, D, E, F, G and H]` but not `[I, J, K]`.
 
 ### IntChecker
 Checks that integers meet certain numeric conditions without boilerplate code.
