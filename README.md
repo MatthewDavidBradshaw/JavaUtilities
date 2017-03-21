@@ -54,7 +54,25 @@ Recursively searches a file tree to find all files below a particular directory.
 Searching the tree using `searchDownTreeFrom(new File("A"));` returns a set containing `[A, B, C, D, E, F, G and H]` but not `[I, J, K]`.
 
 ### IntChecker
-Checks that integers meet certain numeric conditions without boilerplate code.
+Checks that integers meet numeric conditions without boilerplate code.
+```java
+// Passes and returns 4
+checkLessThan(4, 5);
+
+// Fails and throws an IllegalArgumentException with a default message
+checkLessThan(100, 5);
+
+// Fails and throws an IllegalArgumentException with the message "check failed"
+checkLessThat(100, 5, "check failed");
+```
+
+Checkers exist for:
+- Less than
+- Less than or equal to
+- Greater then
+- Greater than or equal to
+- Equal to
+- Not equal to
 
 ### NullChecker
 Checks that arguments are non-null without boilerplate code. Also provides a utility for checking the contents of a collection in one line.
