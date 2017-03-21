@@ -6,13 +6,26 @@ Releases are made available through jCentre. Add `compile 'com.matthew-tamlin:ja
 
 ## Utilities
 There are four utility classes in this library:
-- `CallbackExecutor`: Executes a queue of Runnable tasks and delivers a callback when all tasks complete.
-- `FileFinder`: Recursively searches a file tree to find all files below a particular directory.
-- `IntChecker`: Checks that integers meet certain numeric conditions without boilerplate code.
-- `NullChecker`: Checks that arguments are non-null without boilerplate code. Also provides a
-utility for checking the contents of a collection in one line.
+- CallbackExecutor
+- FileFinder
+- IntChecker
+- NullChecker
+- @Tested
 
-The library also contains the @Tested annotation which is useful for keeping track of which classes have been tested.
+### CallbackExecutor
+Executes a queue of Runnable tasks and delivers a callback when all tasks complete.
+
+### FileFinder
+Recursively searches a file tree to find all files below a particular directory.
+
+### IntChecker
+Checks that integers meet certain numeric conditions without boilerplate code.
+
+### NullChecker
+Checks that arguments are non-null without boilerplate code. Also provides a utility for checking the contents of a collection in one line.
+
+### @Tested
+Useful for marking classes which have been tested.
 
 ## Licensing
 This library is licenced under the Apache v2.0 licence. Have a look at [the license](LICENSE) for details.
