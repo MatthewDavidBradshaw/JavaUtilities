@@ -90,8 +90,12 @@ checkNotNull(null, "check failed");
 checkNotNull(null, new MyCustomException());
 ```
 
-### @Tested
-Useful for marking classes which have been tested.
+### Tested
+The Tested annotation is useful for marking classes which have been tested in some way.
+```java
+@Tested(testMethod="automated")
+public class SomethingUnitTested {}
+```
 
 ## Licensing
 This library is licenced under the Apache v2.0 licence. Have a look at [the license](LICENSE) for details.
