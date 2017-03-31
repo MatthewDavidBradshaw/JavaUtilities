@@ -95,6 +95,9 @@ The Tested annotation is useful for marking classes which have been tested in so
 ```java
 @Tested(testMethod="automated")
 public class SomethingUnitTested {}
+
+@Tested(testMethod="manual")
+public class SomethingManuallyTested {}
 ```
 
 ## Licensing
