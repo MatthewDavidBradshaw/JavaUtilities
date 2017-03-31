@@ -91,13 +91,15 @@ checkNotNull(null, new MyCustomException());
 ```
 
 ### Tested
-The Tested annotation is useful for marking classes which have been tested in some way.
+The Tested annotation has no functionality, it's just a good way to keep track of what has and hasn't been tested.
 ```java
 @Tested(testMethod="automated")
 public class SomethingUnitTested {}
 
 @Tested(testMethod="manual")
 public class SomethingManuallyTested {}
+
+public class SomethingUntested {}
 ```
 
 ## Licensing
