@@ -106,4 +106,4 @@ public class SomethingUntested {}
 This library is licenced under the Apache v2.0 licence. Have a look at [the license](LICENSE) for details.
 
 ## Compatibility
-This library is was compiled using Java 1.7.
+This library is compatible with Java 1.7 and up.
