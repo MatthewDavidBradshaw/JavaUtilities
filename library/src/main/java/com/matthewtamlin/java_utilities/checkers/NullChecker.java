@@ -26,6 +26,7 @@ import java.util.Iterator;
  * Utility for checking if arguments are null without boilerplate code.
  */
 @Tested(testMethod = "automated")
+@Deprecated
 public class NullChecker {
 	private static final String DEFAULT_MESSAGE = "null check failed";
 	

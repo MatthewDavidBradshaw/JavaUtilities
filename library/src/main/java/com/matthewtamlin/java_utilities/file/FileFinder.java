@@ -25,9 +25,12 @@ import java.util.Set;
 /**
  * Searches a directory to find all contained files. The search is recursive and will continue
  * down the file tree until there are no more directories to explore.
+ *
+ * @deprecated this entire library has been deprecated.
  */
 @SuppressWarnings("WeakerAccess") // This is a public API class
 @Tested(testMethod = "automated")
+@Deprecated
 public class FileFinder {
 	/**
 	 * Used during debugging to identify this class.

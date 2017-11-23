@@ -23,9 +23,12 @@ import java.lang.annotation.Target;
 
 /**
  * Identifies classes which have been tested and specifies the testing method.
+ *
+ * @deprecated this entire library has been deprecated.
  */
 @Retention(RetentionPolicy.SOURCE) // This class has no effect on execution, it just tracks testing
 @Target(ElementType.TYPE)
+@Deprecated
 public @interface Tested {
 	/**
 	 * @return a String describing the testing method (e.g. manual, automated)
