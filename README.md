@@ -1,6 +1,8 @@
 # JavaUtilities
 This library contains simple helpers and utilities which save time and eliminate boilerplate code when developing in Java.
 
+This library was created as an exercise in producing an open source library and is now deprecated. Developers shoould instead use Guava and the Apache libraries. 
+
 ## Download
 Releases are made available through jCentre. Add `compile 'com.matthew-tamlin:java-utilities:1.3.3'` to your gradle build file to use the latest version. Older versions are available in the [maven repo](https://bintray.com/matthewtamlin/maven/JavaUtilities/view).
 

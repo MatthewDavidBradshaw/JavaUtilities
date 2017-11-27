@@ -20,9 +20,12 @@ import com.matthewtamlin.java_utilities.testing.Tested;
 
 /**
  * Utility for checking if integers satisfy numeric conditions without boilerplate code.
+ *
+ * @deprecated this entire library has been deprecated.
  */
 @SuppressWarnings({"SameParameterValue", "WeakerAccess"}) // Not relevant to public API
 @Tested(testMethod = "automated")
+@Deprecated
 public class IntChecker {
 	/**
 	 * The exception message to use if no message is provided.

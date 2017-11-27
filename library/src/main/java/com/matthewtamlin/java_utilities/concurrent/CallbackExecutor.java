@@ -31,9 +31,12 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Submitted tasks are not executed until the {@link #execute()} method is called,
  * and no new Runnables may be submitted once execution has begun. Runnables can be executed
  * using a single thread, a cached thread pool, or a fixed thread pool.
+ *
+ * @deprecated this entire library has been deprecated.
  */
 @SuppressWarnings("WeakerAccess") // This is a public API class
 @Tested(testMethod = "automated")
+@Deprecated
 public class CallbackExecutor {
 	/**
 	 * The ExecutorService which actually runs the tasks.
