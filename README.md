@@ -11,11 +11,7 @@ repositories {
 }
 
 dependencies {
-  // For Android Gradle plugin 3.0.0+ projects:
   implementation 'com.matthew-tamlin:java-utilities:1.3.3'
-
-  // For older projects:
-  compile 'com.matthew-tamlin:java-utilities:1.3.3'
 }
 ```
 
