@@ -3,6 +3,8 @@ This library contains simple helpers and utilities which save time and eliminate
 
 This library was created as an exercise in producing an open source library. It is now deprecated and will no longer be supported.
 
+**SUPPORT NOTICE: This library is now STABLE. It is no longer under active development, however pull requests from others are still being accepted.**
+
 ## Download
 To use the library, add the following to your gradle build file:
 ```groovy
